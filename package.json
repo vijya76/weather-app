@@ -1,0 +1,24 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Weather App",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 20000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijya76/weather-app.git"
+  },
+  "keywords": [
+    "Weather",
+    "3rd-Party",
+    "APIs"
+  ],
+  "author": "Vijay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijya76/weather-app/issues"
+  },
+  "homepage": "https://github.com/vijya76/weather-app#readme"
+}
