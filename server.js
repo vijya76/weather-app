@@ -2,6 +2,7 @@
 require('dotenv').config()
 
 const _ = require('lodash')
+const logger = require('./lib/logger');
 const Weather = require('./lib/weather')
 
 async function getWeather (city, longitude, latitude) {
@@ -12,23 +13,30 @@ async function getWeather (city, longitude, latitude) {
 }
 
 function _print (heading, params) {
-  console.log('=========================')
-  console.log(heading)
-  console.log('=========================')
+  logger.info('=========================')
+  logger.info(heading)
+  logger.info('=========================')
   _.forEach(params, (value, param) => {
-    console.log(`${param}: ${value}`)
+    logger.info(`${param}: ${value}`)
   })
-  console.log('=========================')
+  logger.info('=========================')
 }
 
 function printWind (response) {
-  const { speed, deg } = response.wind
-  _print('Wind', { 'Speed': speed, 'Degree': deg })
+  _print('Wind', {
+    'Speed': response.wind.speed,
+    'Degree': response.wind.deg
+  })
 }
 
 function printWeatherDetails (response) {
-  const { temp, pressure, humidity, temp_min, temp_max } = response.main
-  _print('Weather', { 'Temperature': temp, 'Pressure': pressure, 'Humidity': humidity, 'Minimum Temperature': temp_min, 'Maximum Temperature': temp_max })
+  _print('Weather', {
+    'Temperature': response.main.temp,
+    'Pressure': response.main.pressure,
+    'Humidity': response.main.humidity,
+    'Minimum Temperature': response.main.temp_min,
+    'Maximum Temperature': response.main.temp_max
+  })
 }
 
 function printResponse (response) {
