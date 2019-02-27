@@ -2,7 +2,7 @@
 require('dotenv').config()
 
 const _ = require('lodash')
-const logger = require('./lib/logger');
+const logger = require('./lib/logger')
 const Weather = require('./lib/weather')
 
 async function getWeather (city, longitude, latitude) {
