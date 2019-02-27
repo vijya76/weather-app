@@ -20,7 +20,8 @@
     "mocha": "^6.0.2",
     "replay": "^2.4.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "winston": "^2.4.4"
   },
   "repository": {
     "type": "git",
