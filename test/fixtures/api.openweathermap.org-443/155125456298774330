@@ -1,0 +1,16 @@
+GET /data/2.5/weather?lat=100000&lon=-107.7934273&appid={your-key}
+host: api.openweathermap.org
+accept: application/json
+
+HTTP/1.1 400 Bad Request
+server: openresty
+date: Wed, 27 Feb 2019 08:02:55 GMT
+content-type: application/json; charset=utf-8
+content-length: 47
+connection: close
+x-cache-key: /data/2.5/weather?lat=100000&lon=-107.79
+access-control-allow-origin: *
+access-control-allow-credentials: true
+access-control-allow-methods: GET, POST
+
+{"cod":"400","message":"100000 is not a float"}

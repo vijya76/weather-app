@@ -1,0 +1,16 @@
+GET /data/2.5/weather?q=Colarado&appid={your-key}
+host: api.openweathermap.org
+accept: application/json
+
+HTTP/1.1 404 Not Found
+server: openresty
+date: Wed, 27 Feb 2019 07:23:52 GMT
+content-type: application/json; charset=utf-8
+content-length: 40
+connection: close
+x-cache-key: /data/2.5/weather?q=colarado
+access-control-allow-origin: *
+access-control-allow-credentials: true
+access-control-allow-methods: GET, POST
+
+{"cod":"404","message":"city not found"}

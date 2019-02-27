@@ -1,0 +1,16 @@
+GET /data/2.5/weather?lat=38.9764608&lon=-107.7934273&appid={your-key}
+host: api.openweathermap.org
+accept: application/json
+
+HTTP/1.1 200 OK
+server: openresty
+date: Wed, 27 Feb 2019 07:03:59 GMT
+content-type: application/json; charset=utf-8
+content-length: 447
+connection: close
+x-cache-key: /data/2.5/weather?lat=38.98&lon=-107.79
+access-control-allow-origin: *
+access-control-allow-credentials: true
+access-control-allow-methods: GET, POST
+
+{"coord":{"lon":-107.79,"lat":38.98},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":272.36,"pressure":1022,"humidity":69,"temp_min":269.82,"temp_max":275.15},"visibility":16093,"wind":{"speed":1.5,"deg":50},"clouds":{"all":1},"dt":1551250928,"sys":{"type":1,"id":3263,"message":0.0058,"country":"US","sunrise":1551275178,"sunset":1551315713},"id":5416516,"name":"Cedaredge","cod":200}

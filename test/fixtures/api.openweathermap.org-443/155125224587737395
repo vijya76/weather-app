@@ -1,0 +1,16 @@
+GET /data/2.5/weather?q=London&appid={your-key}
+host: api.openweathermap.org
+accept: application/json
+
+HTTP/1.1 200 OK
+server: openresty
+date: Wed, 27 Feb 2019 07:24:18 GMT
+content-type: application/json; charset=utf-8
+content-length: 542
+connection: close
+x-cache-key: /data/2.5/weather?q=london
+access-control-allow-origin: *
+access-control-allow-credentials: true
+access-control-allow-methods: GET, POST
+
+{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"},{"id":701,"main":"Mist","description":"mist","icon":"50d"},{"id":741,"main":"Fog","description":"fog","icon":"50d"}],"base":"stations","main":{"temp":274.18,"pressure":1026,"humidity":93,"temp_min":271.15,"temp_max":279.82},"visibility":5000,"wind":{"speed":0.5},"clouds":{"all":0},"dt":1551251915,"sys":{"type":1,"id":1414,"message":0.0148,"country":"GB","sunrise":1551250206,"sunset":1551289031},"id":2643743,"name":"London","cod":200}
