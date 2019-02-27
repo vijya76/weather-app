@@ -15,7 +15,10 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
+    "chai": "^4.2.0",
     "dotenv": "^6.2.0",
+    "mocha": "^6.0.2",
+    "replay": "^2.4.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
