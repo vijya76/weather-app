@@ -1,13 +1,15 @@
 /* global it, describe */
 const chai = require('chai')
-const weather = require('../lib/weather')
+const Weather = require('../lib/weather')
 
 describe('Weather Library', function () {
   describe('#getWeatherByCityName', function () {
     it('City Not Found', async function () {
       try {
         const city = 'Colarado'
-        await weather.getWeatherByCityName(city)
+        const weather = new Weather()
+        weather.setCity(city)
+        await weather.getWeather()
       } catch (err) {
         chai.expect(err.response.body).to.be.a('object')
         chai.expect(err.response.body).to.have.all.keys('message', 'cod')
@@ -18,7 +20,9 @@ describe('Weather Library', function () {
 
     it('Success', async function () {
       const city = 'London'
-      const data = await weather.getWeatherByCityName(city)
+      const weather = new Weather()
+      weather.setCity(city)
+      const data = await weather.getWeather()
       chai.expect(data).to.be.a('object')
       chai.expect(data).to.have.all.keys('coord', 'weather', 'base', 'main', 'visibility', 'wind', 'clouds', 'dt', 'sys', 'id', 'name', 'cod')
       chai.expect(data.coord).to.be.a('object')
@@ -36,7 +40,9 @@ describe('Weather Library', function () {
       try {
         const latitude = 100000
         const longitude = -107.7934273
-        await weather.getWeatherByGeoLocation(latitude, longitude)
+        const weather = new Weather()
+        weather.setGeoLocation(latitude, longitude)
+        await weather.getWeather()
       } catch (err) {
         chai.expect(err.response.body).to.be.a('object')
         chai.expect(err.response.body).to.have.all.keys('message', 'cod')
@@ -48,7 +54,9 @@ describe('Weather Library', function () {
     it('Success', async function () {
       const latitude = 38.9764608
       const longitude = -107.7934273
-      const data = await weather.getWeatherByGeoLocation(latitude, longitude)
+      const weather = new Weather()
+      weather.setGeoLocation(latitude, longitude)
+      const data = await weather.getWeather()
       chai.expect(data).to.be.a('object')
       chai.expect(data).to.have.all.keys('coord', 'weather', 'base', 'main', 'visibility', 'wind', 'clouds', 'dt', 'sys', 'id', 'name', 'cod')
       chai.expect(data.coord).to.be.a('object')
@@ -67,7 +75,9 @@ describe('Weather Library', function () {
       try {
         const zipCode = 284002
         const region = 'us'
-        await weather.getWeatherByZip(zipCode, region)
+        const weather = new Weather()
+        weather.setZip(zipCode, region)
+        await weather.getWeather()
       } catch (err) {
         chai.expect(err.response.body).to.be.a('object')
         chai.expect(err.response.body).to.have.all.keys('message', 'cod')
@@ -79,7 +89,9 @@ describe('Weather Library', function () {
     it('Success', async function () {
       const zipCode = 80011
       const region = 'us'
-      const data = await weather.getWeatherByZip(zipCode, region)
+      const weather = new Weather()
+      weather.setZip(zipCode, region)
+      const data = await weather.getWeather()
       chai.expect(data).to.be.a('object')
       chai.expect(data).to.have.all.keys('coord', 'weather', 'base', 'main', 'visibility', 'wind', 'clouds', 'dt', 'sys', 'id', 'name', 'cod')
       chai.expect(data.coord).to.be.a('object')
